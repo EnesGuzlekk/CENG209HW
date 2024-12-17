@@ -101,7 +101,7 @@ int main() {
     RoomNode *rooms[] = {start_room, room2, room3, room4, room5, room6, room7};
     int length = sizeof(rooms) / sizeof(rooms[0]);
     for (int i = 0; i < length; i++) {
-        // Random items
+        
         for (int j = 0; j < 3; j++) {
             char *item = random_item();
             add_item_to_room(rooms[i], item);
@@ -137,7 +137,7 @@ int main() {
     RoomNode *current_room = start_room;
 
     printf("Welcome to Node-Based Dungeon Adventure!\n");
-    help_command(); // Show initial help
+    help_command(); 
 
     char command[256];
     while (1) {
@@ -315,9 +315,9 @@ void free_player(Player *player) {
 }
 
 void move_player(Player *player, RoomNode **current_room, const char *direction) {
-    (void)player; // kullanilmayan parametreye referans
+    (void)player; 
     bool arr[4] = {false};
-    (void)arr; // kullanilmayan degiskene referans
+    (void)arr; 
 
     RoomNode *next_room = NULL;
     if (strcmp(direction, "north") == 0) next_room = (*current_room)->north;
@@ -338,7 +338,7 @@ void move_player(Player *player, RoomNode **current_room, const char *direction)
 }
 
 void look(RoomNode *current_room, Player *player,char grid[MAX_ROOMS][MAX_ROOMS]) {
-    (void)player; // kullanilmayan parametreye referans
+    (void)player;
     printf("====================================\n");
     printf("You are in: %s\n", current_room->description);
 
@@ -590,13 +590,13 @@ void list_saved_games() {
 
 char *random_item() {
     const char *items[] = {"Axe","Sword", "Shield", "Potion", "Gold Coin"};
-    int index = rand() % 5;  // Randomly select an index from 0 to 4
+    int index = rand() % 5;  
     return strdup(items[index]);
 }
 
 char *random_monster() {
     const char *monsters[] = {"Goblin", "Orc", "Dragon", "Troll", "Vampire", "Zombie"};
-    int index = rand() % 5;  // Randomly select an index from 0 to 4
+    int index = rand() % 5;  
     return strdup(monsters[index]);
 }
 
